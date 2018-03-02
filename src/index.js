@@ -21,7 +21,9 @@ const PSC = function (url, data = {}, options = {}) {
     const sockOpt = data.socket || options.socket;
     if (data.hasOwnProperty('socket')) delete data.socket;
     const ifUseSocket = !!sockOpt;
-    let socket = ifUseSocket && io(domain + '/' + sessId);
+    let socket = ifUseSocket && io(domain, {
+        query: { sessId }
+    });
     this.socket = socket;
 
     const thenDo = sockId => fetch(url, {

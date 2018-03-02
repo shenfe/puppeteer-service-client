@@ -1,8 +1,8 @@
 const path = require('path');
 
-module.exports = {
+const conf = {
     mode: 'development',
-    // mode: 'production',
+    devtool: 'cheap-module-source-map',
     entry: './src/index.js',
     output: {
         filename: 'puppeteer-service-client.js',
@@ -11,3 +11,5 @@ module.exports = {
         libraryTarget: 'umd'
     }
 };
+
+module.exports = conf;
