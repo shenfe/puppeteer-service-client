@@ -1,4 +1,4 @@
-# puppeteer-service-client
+# puppeteer-service-client <a href="https://www.npmjs.com/package/puppeteer-service-client"><img src="https://img.shields.io/npm/v/puppeteer-service-client.svg"></a>
 
 Client side of [puppeteer-service](https://github.com/shenfe/puppeteer-service).
 
