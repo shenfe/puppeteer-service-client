@@ -54,7 +54,9 @@ const PSC = function (url, data = {}, options = {}) {
                 console.log('disconnect');
             });
             if (typeof sockOpt === 'function') {
-                socket.on('server:echo', sockOpt);
+                socket.on('server:echo', function () {
+                    sockOpt(...arguments);
+                });
             }
 
             const timeout = 2000;
