@@ -58,6 +58,9 @@ const PSC = function (url, data = {}, options = {}) {
                     sockOpt(...arguments);
                 });
             }
+            socket.on('server:close', function () {
+                socket.close();
+            });
 
             const timeout = 2000;
             setTimeout(() => reject('timeout'), timeout);
