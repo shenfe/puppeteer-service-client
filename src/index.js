@@ -64,7 +64,9 @@ const PSC = function (url, data = {}, options = {}) {
 
             const timeout = 2000;
             setTimeout(() => reject('timeout'), timeout);
-        }).then(thenDo);
+        }).then(thenDo).catch(err => {
+            socket.close();
+        });
     } else {
         return thenDo();
     }
