@@ -41,7 +41,7 @@ const PSC = function (url, data = {}, options = {}) {
         })
     }).then(res => {
         if (res.ok) return res.json();
-        throw new Error('Response is not ok');
+        throw new Error(res.statusText);
     });
     
     if (socket) {
